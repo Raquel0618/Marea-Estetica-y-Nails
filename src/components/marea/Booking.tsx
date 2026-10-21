@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import {
   BOOKING_SERVICES,
-  TIME_SLOTS,
+  getSlotsForDay,
   buildWhatsAppUrl,
   clientSchema,
   formatBookingDate,
@@ -175,7 +175,7 @@ export function Booking() {
                 {step === 2 && (
                   <div className="animate-rise">
                     <h3 className="font-display text-2xl font-semibold text-navy">Elige día y hora</h3>
-                    <p className="text-sm text-muted-foreground">De lunes a sábado.</p>
+                    <p className="text-sm text-muted-foreground">Lunes a viernes de 10:00 a 20:00 · Sábados de 10:00 a 14:00.</p>
                     <div className="mt-5 grid gap-6 md:grid-cols-[auto_1fr]">
                       <div className="flex justify-center">
                         <Calendar
@@ -197,7 +197,7 @@ export function Booking() {
                             <p className="flex items-center gap-2 text-sm font-medium text-navy">
                               <Clock className="h-4 w-4 text-gold" /> {formatBookingDate(date)}
                             </p>
-                            {(Object.entries(TIME_SLOTS) as [string, readonly string[]][]).map(
+                            {(Object.entries(getSlotsForDay(date)).filter(([, s]) => s.length > 0) as [string, readonly string[]][]).map(
                               ([period, slots]) => (
                                 <div key={period} className="mt-4">
                                   <p className="mb-2 text-xs uppercase tracking-wider text-muted-foreground">
