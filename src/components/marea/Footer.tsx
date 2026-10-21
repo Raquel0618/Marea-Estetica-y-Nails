@@ -1,7 +1,7 @@
-import { Heart, MapPin, Phone } from "lucide-react";
+import { Clock, Heart, MapPin, Phone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { BUSINESS } from "@/lib/booking";
+import { BUSINESS, OPENING_HOURS } from "@/lib/booking";
 import { InstagramIcon, WhatsAppIcon } from "./icons";
 
 export function Footer() {
