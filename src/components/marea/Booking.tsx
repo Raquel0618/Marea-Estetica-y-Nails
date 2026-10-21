@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { handleExternalClick, openExternal } from "@/lib/external-link";
 import { startOfToday } from "date-fns";
 import { es } from "date-fns/locale";
 import { ArrowLeft, ArrowRight, CalendarDays, Check, Clock, User } from "lucide-react";
@@ -53,7 +54,7 @@ export function Booking() {
     if (!date || !time) return;
     const url = buildWhatsAppUrl({ services, date, time, ...parsed.data });
     setSentUrl(url);
-    window.open(url, "_blank", "noopener,noreferrer");
+    openExternal(url);
   };
 
   const reset = () => {
@@ -122,7 +123,8 @@ export function Booking() {
                 </p>
                 <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                   <Button asChild variant="whatsapp" size="lg" className="h-12">
-                    <a href={sentUrl} target="_blank" rel="noreferrer">
+                    <a href={sentUrl} target="_blank" rel="noopener noreferrer"
+                onClick={handleExternalClick}>
                       <WhatsAppIcon /> Abrir WhatsApp de nuevo
                     </a>
                   </Button>

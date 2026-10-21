@@ -1,4 +1,5 @@
 import { Heart, MapPin, Sparkles } from "lucide-react";
+import { handleExternalClick } from "@/lib/external-link";
 
 import { Button } from "@/components/ui/button";
 import { BUSINESS } from "@/lib/booking";
@@ -60,7 +61,8 @@ export function Hero() {
           <a
             href={BUSINESS.mapsUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+                onClick={handleExternalClick}
             className="mt-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-2 text-sm text-navy backdrop-blur transition-colors hover:bg-card"
           >
             <MapPin className="h-4 w-4 text-gold" />

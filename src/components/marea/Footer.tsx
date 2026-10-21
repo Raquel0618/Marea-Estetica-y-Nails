@@ -1,4 +1,5 @@
 import { Clock, Heart, MapPin, Phone } from "lucide-react";
+import { handleExternalClick } from "@/lib/external-link";
 
 import { Button } from "@/components/ui/button";
 import { BUSINESS, OPENING_HOURS } from "@/lib/booking";
@@ -38,7 +39,8 @@ export function Footer() {
               </a>
             </Button>
             <Button asChild variant="whatsapp" size="xl" className="w-full">
-              <a href={`https://api.whatsapp.com/send?phone=${BUSINESS.phoneDigits}`} target="_blank" rel="noreferrer">
+              <a href={`https://api.whatsapp.com/send?phone=${BUSINESS.phoneDigits}`} target="_blank" rel="noopener noreferrer"
+                onClick={handleExternalClick}>
                 <WhatsAppIcon /> Escríbenos por WhatsApp
               </a>
             </Button>
@@ -46,7 +48,8 @@ export function Footer() {
               <a
                 href={`https://instagram.com/${BUSINESS.instagram}`}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                onClick={handleExternalClick}
               >
                 <InstagramIcon /> @{BUSINESS.instagram}
               </a>
@@ -54,7 +57,8 @@ export function Footer() {
             <a
               href={BUSINESS.mapsUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+                onClick={handleExternalClick}
               className="mt-2 inline-flex items-center justify-center gap-2 text-sm text-navy-foreground/80 transition-colors hover:text-navy-foreground"
             >
               <MapPin className="h-4 w-4 text-gold" /> {BUSINESS.address}
@@ -75,7 +79,8 @@ export function FloatingWhatsApp() {
     <a
       href={`https://api.whatsapp.com/send?phone=${BUSINESS.phoneDigits}`}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
+                onClick={handleExternalClick}
       aria-label="Escribir por WhatsApp"
       className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-whatsapp text-navy-foreground shadow-soft transition-transform hover:scale-110"
     >
