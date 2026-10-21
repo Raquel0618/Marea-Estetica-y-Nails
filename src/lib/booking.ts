@@ -82,13 +82,13 @@ export function formatBookingDate(date: Date): string {
 
 export function buildWhatsAppMessage(b: BookingData): string {
   return [
-    "¡Hola MAREA! 🌊 Me gustaría reservar una cita:",
+    "¡Hola MAREA! Me gustaría reservar una cita:",
     "",
-    `💅 Servicio: ${b.services.join(", ")}`,
-    `📅 Fecha: ${formatBookingDate(b.date)}`,
-    `🕐 Hora: ${b.time}`,
-    `👤 Nombre: ${b.name.trim()}`,
-    `📱 WhatsApp: ${b.phone.trim()}`,
+    `Servicio: ${b.services.join(", ")}`,
+    `Fecha: ${formatBookingDate(b.date)}`,
+    `Hora: ${b.time}`,
+    `Nombre: ${b.name.trim()}`,
+    `WhatsApp: ${b.phone.trim()}`,
     "",
     "¡Gracias!",
   ].join("\n");
