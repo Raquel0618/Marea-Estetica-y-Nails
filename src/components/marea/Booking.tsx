@@ -315,8 +315,10 @@ export function Booking() {
                       Continuar <ArrowRight />
                     </Button>
                   ) : (
-                    <Button variant="whatsapp" size="lg" className="h-12" onClick={confirm}>
-                      <WhatsAppIcon /> Confirmar por WhatsApp
+                    <Button variant="whatsapp" size="lg" className="h-12 px-6" onClick={confirm}>
+                      <WhatsAppIcon />
+                      <span className="sm:hidden">Confirmar</span>
+                      <span className="hidden sm:inline">Confirmar por WhatsApp</span>
                     </Button>
                   )}
                 </div>
