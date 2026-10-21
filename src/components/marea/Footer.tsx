@@ -16,6 +16,19 @@ export function Footer() {
               Tu belleza, nuestra marea
               <Heart className="ml-2 inline h-5 w-5 align-middle" strokeWidth={1.5} />
             </p>
+            <div className="mt-8">
+              <p className="flex items-center justify-center gap-2 text-xs uppercase tracking-[0.3em] text-gold md:justify-start">
+                <Clock className="h-4 w-4" /> Horario
+              </p>
+              <ul className="mt-3 space-y-1 text-sm">
+                {OPENING_HOURS.map((o) => (
+                  <li key={o.days} className="flex justify-center gap-3 md:justify-start">
+                    <span className="text-navy-foreground/80">{o.days}</span>
+                    <span className="font-medium">{o.hours}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <div className="flex flex-col gap-3">
