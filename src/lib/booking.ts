@@ -95,5 +95,5 @@ export function buildWhatsAppMessage(b: BookingData): string {
 }
 
 export function buildWhatsAppUrl(b: BookingData): string {
-  return `https://wa.me/${BUSINESS.phoneDigits}?text=${encodeURIComponent(buildWhatsAppMessage(b))}`;
+  return `https://api.whatsapp.com/send?phone=${BUSINESS.phoneDigits}&text=${encodeURIComponent(buildWhatsAppMessage(b))}`;
 }
