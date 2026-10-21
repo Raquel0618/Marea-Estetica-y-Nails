@@ -12,11 +12,11 @@ const booking = {
 
 describe("reserva por WhatsApp", () => {
   it("envía el mensaje al número de MAREA +34 671 80 39 99", () => {
-    expect(buildWhatsAppUrl(booking).startsWith("https://wa.me/34671803999?text=")).toBe(true);
+    expect(buildWhatsAppUrl(booking).startsWith("https://api.whatsapp.com/send?phone=34671803999&text=")).toBe(true);
   });
 
   it("incluye servicio, fecha, hora y nombre en el mensaje", () => {
-    const text = decodeURIComponent(buildWhatsAppUrl(booking).split("?text=")[1] ?? "");
+    const text = decodeURIComponent(buildWhatsAppUrl(booking).split("&text=")[1] ?? "");
     expect(text).toContain("Manicura, Olaplex");
     expect(text).toContain("3 de noviembre de 2026");
     expect(text).toContain("17:00");

@@ -38,7 +38,7 @@ export function Footer() {
               </a>
             </Button>
             <Button asChild variant="whatsapp" size="xl" className="w-full">
-              <a href={`https://wa.me/${BUSINESS.phoneDigits}`} target="_blank" rel="noreferrer">
+              <a href={`https://api.whatsapp.com/send?phone=${BUSINESS.phoneDigits}`} target="_blank" rel="noreferrer">
                 <WhatsAppIcon /> Escríbenos por WhatsApp
               </a>
             </Button>
@@ -73,7 +73,7 @@ export function Footer() {
 export function FloatingWhatsApp() {
   return (
     <a
-      href={`https://wa.me/${BUSINESS.phoneDigits}`}
+      href={`https://api.whatsapp.com/send?phone=${BUSINESS.phoneDigits}`}
       target="_blank"
       rel="noreferrer"
       aria-label="Escribir por WhatsApp"
