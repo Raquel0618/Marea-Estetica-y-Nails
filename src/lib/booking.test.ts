@@ -16,7 +16,7 @@ describe("reserva por WhatsApp", () => {
   });
 
   it("incluye servicio, fecha, hora y nombre en el mensaje", () => {
-    const text = decodeURIComponent(buildWhatsAppUrl(booking).split("?text=")[1]);
+    const text = decodeURIComponent(buildWhatsAppUrl(booking).split("?text=")[1] ?? "");
     expect(text).toContain("Manicura, Olaplex");
     expect(text).toContain("3 de noviembre de 2026");
     expect(text).toContain("17:00");
