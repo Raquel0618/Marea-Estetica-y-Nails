@@ -30,10 +30,6 @@ export function Hero() {
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-10 md:grid-cols-[1.1fr_1fr] md:pb-24 md:pt-16">
         {/* Brand block */}
         <div className="animate-rise text-center md:text-left">
-          <div className="mx-auto mb-6 inline-flex -rotate-2 flex-col items-center rounded-sm bg-gradient-navy px-4 py-2 text-navy-foreground shadow-soft md:mx-0">
-            <span className="font-script text-2xl leading-none">Realza</span>
-            <span className="text-[0.6rem] uppercase tracking-[0.25em]">tu belleza · siéntete tú</span>
-          </div>
 
           <img
             src={wave}
