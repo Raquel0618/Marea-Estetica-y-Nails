@@ -32,7 +32,7 @@ export function Booking() {
   const [time, setTime] = useState<string | undefined>();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
+  const [errors, setErrors] = useState<{ name?: string | undefined; phone?: string | undefined }>({});
   const [sentUrl, setSentUrl] = useState<string | null>(null);
 
   const today = useMemo(() => startOfToday(), []);
