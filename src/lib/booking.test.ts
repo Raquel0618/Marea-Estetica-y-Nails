@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { buildWhatsAppUrl, clientSchema, isClosedDay, isSlotPast } from "./booking";
+import { buildWhatsAppUrl, clientSchema, getSlotsForDay, isClosedDay, isSlotPast } from "./booking";
 
 const booking = {
   services: ["Manicura", "Olaplex"],
@@ -36,5 +36,17 @@ describe("reserva por WhatsApp", () => {
     const now = new Date(2026, 10, 3, 12, 30);
     expect(isSlotPast(new Date(2026, 10, 3), "12:00", now)).toBe(true);
     expect(isSlotPast(new Date(2026, 10, 3), "16:00", now)).toBe(false);
+  });
+
+  it("lunes a viernes: última cita a las 19:00 (cierre 20:00)", () => {
+    const s = getSlotsForDay(new Date(2026, 10, 2));
+    expect(s.manana[0]).toBe("10:00");
+    expect(s.tarde.at(-1)).toBe("19:00");
+  });
+
+  it("sábados: de 10:00 a 14:00, sin tarde", () => {
+    const s = getSlotsForDay(new Date(2026, 10, 7));
+    expect(s.manana.at(-1)).toBe("13:00");
+    expect(s.tarde).toEqual([]);
   });
 });

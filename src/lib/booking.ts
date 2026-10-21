@@ -26,10 +26,21 @@ export const BOOKING_SERVICES = [
 
 export type ServiceId = (typeof BOOKING_SERVICES)[number]["id"];
 
-export const TIME_SLOTS = {
-  manana: ["10:00", "11:00", "12:00", "13:00"],
-  tarde: ["16:00", "17:00", "18:00", "19:00"],
-} as const;
+/** Opening hours: Mon–Fri 10:00–20:00, Sat 10:00–14:00, Sun closed. */
+export const OPENING_HOURS = [
+  { days: "Lunes a viernes", hours: "10:00 – 20:00" },
+  { days: "Sábados", hours: "10:00 – 14:00" },
+  { days: "Domingos", hours: "Cerrado" },
+] as const;
+
+/** Bookable start times for a given day (last slot one hour before closing). */
+export function getSlotsForDay(date: Date): { manana: string[]; tarde: string[] } {
+  const day = date.getDay();
+  if (day === 0) return { manana: [], tarde: [] };
+  const manana = ["10:00", "11:00", "12:00", "13:00"];
+  if (day === 6) return { manana, tarde: [] };
+  return { manana, tarde: ["14:00", "15:00", "16:00", "17:00", "18:00", "19:00"] };
+}
 
 /** Sundays are closed. */
 export function isClosedDay(date: Date): boolean {
