@@ -38,7 +38,7 @@ export function isClosedDay(date: Date): boolean {
 
 /** A slot is in the past when the chosen day is today and the slot hour already passed. */
 export function isSlotPast(date: Date, slot: string, now: Date = new Date()): boolean {
-  const [h, m] = slot.split(":").map(Number);
+  const [h = 0, m = 0] = slot.split(":").map(Number);
   const slotDate = new Date(date);
   slotDate.setHours(h, m, 0, 0);
   return slotDate.getTime() <= now.getTime();
