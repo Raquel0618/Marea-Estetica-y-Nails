@@ -1,24 +1,20 @@
-# Screenshot To Screen Crafter
+# Marea - Estética & Uñas 🌊💅
 
-Utilizan la imagen adjunta para crear el "front-end".
+> Plataforma web comercial y sistema de reservas diseñado a medida para salón de belleza.
 
-This project was built with [Lovable](https://lovable.dev).
+🔗 **Sitio Web Oficial:** [Visita la plataforma web](https://tudominio.com) *(o el enlace de vista previa de Lovable)*
 
-## Build with Lovable
+---
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/c65a7edd-e914-440a-984c-e40550f4ef61).
+## 💡 Sobre el Proyecto
+Proyecto web integral desarrollado para **Marea Estética & Uñas**, enfocado en transmitir elegancia, bienestar y profesionalismo. Diseñado para ofrecer una experiencia de usuario fluida, destacar los tratamientos estéticos y facilitar el contacto directo y la reserva de citas de forma intuitiva.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## 🚀 Características Principales
+* **Diseño UI/UX Responsivo:** Interfaz limpia y moderna basada en una paleta de colores corporativa que evoca la calma y el cuidado personal.
+* **Sección de Servicios y Galería:** Exhibición visual detallada de tratamientos de manicura, estética y cuidado personal.
+* **Integración de Contacto Directo:** Accesos rápidos y pasarelas de comunicación (como WhatsApp y reservas) integradas de forma orgánica en la interfaz.
 
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+## 🛠️ Tecnologías Aplicadas
+* **Desarrollo Front-End:** HTML5, CSS3, JavaScript / React con componentes personalizados.
+* **Metodología:** Desarrollo ágil asistido por Inteligencia Artificial (Prompt Engineering avanzado para la maquetación y optimización de código).
+* **Control de Versiones y Despliegue:** Sincronización continua mediante GitHub y despliegue optimizado.
