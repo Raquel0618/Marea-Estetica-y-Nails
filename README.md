@@ -2,7 +2,7 @@
 
 > Plataforma web comercial y sistema de reservas diseñado a medida para salón de belleza.
 
-🔗 **Sitio Web Oficial:** [Visita la plataforma web](https://tudominio.com) *(o el enlace de vista previa de Lovable)*
+🔗 **Sitio Web Oficial:** https://mareasteticaybelleza.lovable.app
 
 ---
 
